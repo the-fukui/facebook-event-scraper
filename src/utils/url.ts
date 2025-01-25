@@ -19,7 +19,7 @@ export const validateAndFormatUrl = (url: string) => {
     return `https://www.facebook.com/events/${fbid}?_fb_noscript=1`;
   }
 
-  const shortenedUrlId = url.match(/fb\.me\/e\/([a-zA-Z0-9]+)/)?.[1];
+  const shortenedUrlId = url.match(/fb\.me\/e\/([a-zA-Z0-9]{9,})/)?.[1];
   if (shortenedUrlId) {
     return `https://fb.me/e/${shortenedUrlId}?_fb_noscript=1`;
   }
