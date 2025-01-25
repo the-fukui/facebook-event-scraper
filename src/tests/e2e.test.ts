@@ -16,6 +16,12 @@ describe('E2E', () => {
     expect(eventData).toMatchSnapshot();
   });
 
+  it('Generates the correct event data for a Messenger Rooms Online event with short FB URL', async () => {
+    const url = 'https://fb.me/e/88m1uVLVy';
+    const eventData = await scrapeFbEvent(url);
+    expect(eventData).toMatchSnapshot();
+  });
+
   it('Generates the correct event data for a event with an end date & multiple dates', async () => {
     const url =
       'https://www.facebook.com/events/1137956700212933/1137956706879599';
